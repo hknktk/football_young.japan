@@ -1,0 +1,332 @@
+body{
+ font-family: serif;
+ background-color: #333333;
+ color: #ffffff;
+}
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+header{
+  padding:20px;
+}
+
+@keyframes titleAnimation{
+  0%{
+    letter-spacing:.5em;
+    opacity:0;
+  }
+}
+
+header h1{
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  white-space: nowrap;
+  text-align: center;
+  animation:titleAnimation 1.5s;
+}
+
+header p{
+  opacity:0.6;
+  color:yellow;
+}
+
+main{
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+.contents li{
+  position: relative;
+  /* opacity:0;
+  transform:translateY(50px);
+  transition: 0.8s; */
+}
+
+/* .contents li.show{
+  opacity:1;
+  transform:none;
+} */
+
+.contents li.show h2,
+.contents li.show h3,
+.contents li.show p,
+main .contents li.show img{
+  opacity:1;
+  transform:none;
+}
+
+
+
+.contents li:not(:first-of-type){
+  margin-top: 200px;
+}
+
+.contents li:nth-of-type(odd) .contentsText{
+  right:0;
+}
+
+.contents li:nth-of-type(even) .contentsText{
+  align-items: flex-start;
+}
+
+.contents li:nth-of-type(odd) img{
+  transform: translate(-50px, 50px);
+}
+.contents li:nth-of-type(even) img{
+  margin-left: auto;
+  transform: translate(50px, 50px);
+  /*右下から出てくるアニメーション*/
+}
+
+
+.contentsText{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  position: absolute;
+  top: -40px;
+}
+
+.contents h2{
+  font-size: 50px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color:rgba(20,20,20,.8);
+  padding: 10px 20px;
+  line-height:1.0;
+  letter-spacing:.05em;
+  border-radius:5px;
+  opacity:0;
+  transform:translateY(20px);
+  transition: 0.8s .3s;    /*0.3s遅れて0.8sの移動が開始される。*/
+}
+
+.contents h3{
+  font-size: 30px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color:rgba(253, 249, 23, 0.8);
+  color:red;
+  padding: 10px 30px;
+  line-height:1.4;
+  letter-spacing:.05em;
+  opacity:0;
+  transform:translateX(30px);
+  transition: 0.8s .2s;
+  
+}
+
+.contents p{
+  line-height:2.0;
+  background-color: #555555;
+  font-size:14px;
+  max-width: 340px;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  opacity:0;
+  transform:translateY(20px);
+  transition: 0.8s ;
+}
+
+.contents img{
+  width: 65%;
+  display: block;
+  border-radius: 5px;
+  opacity:0;
+  transition: 0.8s ;
+}
+
+footer{
+  text-align: center;
+  padding: 50px;
+  background-color:rgb(15, 11, 11);
+  
+
+}
+
+a{
+  background-color: yellow;
+  color:red;
+}
+
+#photo{
+  width:20px;
+  height:20px;
+  margin-bottom:-5px;
+}
+
+
+/*レスポンシブ*/
+
+@media screen and (max-width: 480px) { 
+  body{
+    font-family: serif;
+    background-color: #333333;
+    color: #ffffff;
+   }
+   
+   *,*::before,*::after{
+     box-sizing: border-box;
+   }
+   
+   header{
+     padding:20px;
+     width:100%;
+   }
+   
+   @keyframes titleAnimation{
+     0%{
+       letter-spacing:.5em;
+       opacity:0;
+     }
+   }
+
+  header h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    white-space: nowrap;
+    text-align: center;
+    animation:titleAnimation 1.5s;
+  }
+  
+  header p{
+    opacity:0.6;
+    color:yellow;
+    font-size: 10px;
+    line-height:1.5;
+  }
+  
+  main{
+    max-width: 480px;
+    width: 100%;
+    margin: 50px auto;
+  }
+  
+  .contents li{
+    position: relative;
+    /* opacity:0;
+    transform:translateY(50px);
+    transition: 0.8s; */
+  }
+  
+  /* .contents li.show{
+    opacity:1;
+    transform:none;
+  } */
+  
+  .contents li.show h2,
+  .contents li.show h3,
+  .contents li.show p,
+  main .contents li.show img{
+    opacity:1;
+    transform:none;
+  }
+  
+  
+  
+  .contents li:not(:first-of-type){
+    margin-top: 100px;
+  }
+  
+  .contents li:nth-of-type(odd) .contentsText{
+    right:0;
+  }
+  
+  .contents li:nth-of-type(even) .contentsText{
+    align-items: flex-start;
+  }
+  
+  .contents li:nth-of-type(odd) img{
+    transform: translate(-25px, 25px);
+  }
+  .contents li:nth-of-type(even) img{
+    margin-left: auto;
+    transform: translate(25px, 25px);
+    /*右下から出てくるアニメーション*/
+  }
+  
+  
+  .contentsText{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    position: absolute;
+    top: -20px;
+  }
+  
+  .contents h2{
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color:rgba(20,20,20,.8);
+    padding: 5px 10px;
+    line-height:1.2;
+    letter-spacing:.05em;
+    border-radius:5px;
+    opacity:0;
+    transform:translateY(10px);
+    transition: 0.8s .3s;    /*0.3s遅れて0.8sの移動が開始される。*/
+  }
+  
+  .contents h3{
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color:rgba(253, 249, 23, 0.8);
+    color:red;
+    padding: 5px 15px;
+    line-height:1.4;
+    letter-spacing:.05em;
+    opacity:0;
+    transform:translateX(15px);
+    transition: 0.8s .2s;
+    
+  }
+  
+  .contents p{
+    line-height:1.5;
+    background-color: #555555;
+    font-size:7px;
+    max-width: 170px;
+    padding:10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    opacity:0;
+    transform:translateY(10px);
+    transition: 0.8s ;
+  }
+  
+  .contents img{
+    width: 65%;
+    display: block;
+    border-radius: 10px;
+    opacity:0;
+    transition: 0.8s ;
+  }
+  
+  footer{
+    text-align: center;
+    padding: 25px;
+    background-color:rgb(15, 11, 11);
+    
+  
+  }
+  
+  a{
+    background-color:yellow;
+    color:red;
+  }
+  
+  #photo{
+    width:20px;
+    height:20px;
+    margin-bottom:-5px;
+  }
+
+}
