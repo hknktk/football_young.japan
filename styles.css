@@ -154,11 +154,14 @@ a {
 /*レスポンシブ*/
 
 @media screen and (max-width: 480px) {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     font-family: serif;
     background-color: #333333;
     color: #ffffff;
-    overflow-x: hidden;
   }
 
   *,
