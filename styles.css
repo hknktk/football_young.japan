@@ -42,6 +42,20 @@ main {
   margin: 50px auto;
 }
 
+main h1{
+  font-size: 50px;
+  padding: 20px;
+  text-align: left;
+}
+
+h1.first{
+  margin-bottom: 50px;
+}
+
+main h1::before{
+  content:"⚽" ;
+}
+
 .contents li {
   position: relative;
   /* opacity:0;
@@ -127,6 +141,7 @@ main .contents li.show img {
   padding: 15px;
   margin-top: 20px;
   border-radius: 5px;
+  text-align: justify;
   opacity: 0;
   transform: translateY(20px);
   transition: 0.8s 0.5s;
@@ -146,9 +161,39 @@ footer {
   background-color: rgb(15, 11, 11);
 }
 
-a {
+footer a {
   background-color: yellow;
-  color: red;
+  display: block;
+  width: 120px;
+  height: 120px;
+  text-decoration: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 70px;
+  padding: 5px;
+}
+
+footer p{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+section{
+  padding: 10px;
+  margin: 20px;
+}
+
+section li,section p{
+  line-height: 2;
+}
+
+section li{
+  font-size: 20px;
+  color: rgb(0, 238, 255);
 }
 
 /*レスポンシブ*/
@@ -162,6 +207,7 @@ a {
     font-family: serif;
     background-color: #333333;
     color: #ffffff;
+    overflow-x: hidden;
   }
 
   *,
@@ -200,8 +246,8 @@ a {
 
   main {
     max-width: 480px;
-    width: 100%;
-    margin: 50px auto;
+    width: 90%;
+    margin: 20px;
   }
 
   .contents li {
@@ -229,7 +275,7 @@ a {
   }
 
   .contents li:nth-of-type(odd) .contentsText {
-    right: 0;
+    right: 0%;
   }
 
   .contents li:nth-of-type(even) .contentsText {
@@ -250,7 +296,11 @@ a {
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    top: -30px;
+    top: -10px;
+  }
+
+  .contents{
+    margin-bottom: 150px;
   }
 
   .contents h2 {
@@ -286,10 +336,11 @@ a {
     line-height: 1.2;
     background-color: #555555;
     font-size: 8px;
-    max-width: 150px;
+    max-width: 180px;
     padding: 10px;
     margin-top: 15px;
     border-radius: 5px;
+    text-align: justify;
     opacity: 0;
     transform: translateY(10px);
     transition: 0.8s 0.5s;
@@ -310,8 +361,58 @@ a {
     background-color: rgb(15, 11, 11);
   }
 
-  a {
+  footer a {
     background-color: yellow;
-    color: red;
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-decoration: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    padding: 5px;
   }
+
+  footer p{
+    font-size: 10px;
+    margin-bottom: 5px;
+    line-height: 2;
+  }
+
+  section{
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  section li,section p{
+    line-height: 2;
+  }
+  
+  section li{
+    font-size: 14px;
+    color: rgb(0, 238, 255);
+  }
+
+  section p{
+    font-size: 12px;
+  }
+
+  main h1{
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  h1.first{
+    margin-bottom: 30px;
+  }
+  
+  main h1::before{
+    content:"⚽" ;
+  }
+
 }
